@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GenClean helps organisations manage backup generators responsibly and explore cleaner backup-energy solutions.">
+  <title>GenClean | Cleaner Backup. Healthier Tomorrow.</title>
+  <style>
+    :root{--forest:#123d32;--deep:#0b2b24;--green:#2d7659;--lime:#d8efdf;--mint:#eff8f1;--ink:#18342c;--muted:#65766e;--white:#fff;--line:#e2ebe5}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+    a{color:inherit;text-decoration:none}.container{width:min(1120px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.3rem;letter-spacing:-.04em;color:var(--forest)}
+    .brand-mark{width:36px;height:36px;border-radius:12px;background:var(--lime);display:grid;place-items:center;color:var(--green);font-size:1.25rem}
+    nav{display:flex;gap:25px;align-items:center;font-size:.92rem;color:#42574e}nav a:hover{color:var(--green)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:999px;background:var(--green);color:white;font-weight:700;border:1px solid var(--green);transition:.2s;cursor:pointer}
+    .btn:hover{background:var(--forest);transform:translateY(-1px)}.btn-outline{background:transparent;color:var(--forest);border-color:#b8cec1}
+    .menu{display:none;background:none;border:0;font-size:1.5rem;color:var(--forest)}
+    .hero{background:radial-gradient(circle at 85% 15%,#346d50 0,transparent 34%),linear-gradient(120deg,var(--deep),#174b3d);color:white;padding:92px 0 82px;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}.eyebrow{display:inline-flex;gap:8px;align-items:center;color:#c6e7d0;font-size:.78rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+    h1{font-size:clamp(2.7rem,6vw,5rem);line-height:1.02;letter-spacing:-.06em;margin:18px 0}.hero p{font-size:1.12rem;color:#d5e7dc;max-width:560px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.hero .btn{background:#d8efdf;color:#153c30;border-color:#d8efdf}.hero .btn-outline{background:transparent;color:white;border-color:#779b88}
+    .visual{min-height:370px;border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.15),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.18);padding:22px;position:relative;display:flex;align-items:end;overflow:hidden}
+    .visual:before{content:"";position:absolute;width:270px;height:270px;border-radius:50%;background:rgba(190,231,200,.18);top:-55px;right:-45px}
+    .visual:after{content:"";position:absolute;width:190px;height:190px;border-radius:50%;border:1px solid rgba(255,255,255,.2);top:22px;right:28px}
+    .visual-card{position:relative;z-index:1;background:rgba(255,255,255,.94);color:var(--forest);border-radius:20px;padding:23px;width:100%;box-shadow:0 20px 50px #061d1760}
+    .visual-card small{color:var(--green);font-weight:800;letter-spacing:.1em;text-transform:uppercase}.visual-card h3{font-size:1.6rem;line-height:1.2;margin:8px 0}.visual-card p{color:var(--muted);font-size:.93rem;margin:0}
+    .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}.stat{background:var(--mint);padding:12px;border-radius:12px}.stat strong{display:block;font-size:1.1rem}.stat span{font-size:.75rem;color:var(--muted)}
+    section{padding:82px 0}.section-head{max-width:690px;margin-bottom:38px}.kicker{color:var(--green);font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:.76rem}
+    h2{font-size:clamp(2rem,4vw,3.1rem);line-height:1.12;letter-spacing:-.045em;margin:10px 0 14px;color:var(--forest)}.section-head p{color:var(--muted);font-size:1.05rem}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{border:1px solid var(--line);border-radius:20px;padding:25px;background:white;box-shadow:0 8px 30px #153c3008}
+    .icon{width:46px;height:46px;border-radius:14px;background:var(--mint);display:grid;place-items:center;font-size:1.35rem;margin-bottom:17px}.card h3{margin:0 0 8px;color:var(--forest)}.card p{margin:0;color:var(--muted);font-size:.94rem}
+    .about{background:var(--mint)}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.about-panel{background:var(--forest);color:white;border-radius:24px;padding:32px}.about-panel h3{font-size:1.55rem;margin:0 0 12px}.about-panel p{color:#d4e6dc}.check{display:flex;gap:12px;margin:14px 0;color:#e5f3e9}.check b{color:#bce4c8}
+    .audience{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.audience-item{padding:18px;border-radius:15px;background:#f7faf7;border:1px solid var(--line);font-weight:700;color:var(--forest)}
+    .packages{background:#f8fbf8}.price-note{font-size:.85rem;color:var(--muted);margin-top:18px}.price{font-size:1.8rem;font-weight:800;color:var(--forest);margin:14px 0 4px}.price small{font-size:.8rem;color:var(--muted);font-weight:500}
+    .package-feature{padding:0;list-style:none;color:var(--muted);font-size:.9rem}.package-feature li{padding:7px 0;border-bottom:1px solid var(--line)}
+    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px}.contact-box{background:var(--forest);color:white;padding:30px;border-radius:22px}.contact-box p{color:#d1e5d8}.contact-box a{color:#d8efdf}
+    form{display:grid;gap:14px}.field{display:grid;gap:6px}.field label{font-size:.88rem;font-weight:700;color:var(--forest)}input,textarea,select{width:100%;border:1px solid #d7e3da;border-radius:11px;padding:13px 14px;font:inherit;background:white;color:var(--ink)}textarea{min-height:125px;resize:vertical}input:focus,textarea:focus,select:focus{outline:2px solid #b8dfc4;border-color:var(--green)}
+    footer{background:var(--deep);color:#d5e7dc;padding:35px 0}.footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}.footer-brand{font-weight:800;color:white;font-size:1.2rem}.fine{font-size:.8rem;color:#a9c5b4}
+    .notice{font-size:.82rem;color:var(--muted);background:#f5f8f5;border-left:3px solid #8ab99a;padding:12px 14px;border-radius:0 9px 9px 0}
+    @media(max-width:800px){nav{display:none;position:absolute;top:76px;left:0;right:0;background:white;padding:18px 4%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}.nav.open nav{display:flex}.menu{display:block}.nav>.btn{display:none}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero{padding:68px 0}.visual{min-height:300px}.cards{grid-template-columns:1fr 1fr}.audience{grid-template-columns:1fr 1fr}section{padding:64px 0}}
+    @media(max-width:520px){.cards,.audience{grid-template-columns:1fr}.stat-row{grid-template-columns:1fr 1fr 1fr}.hero-actions .btn{width:100%}.visual{min-height:280px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav" id="nav">
+    <a class="brand" href="#home"><span class="brand-mark">✦</span> GenClean</a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a><a href="#services">Services</a><a href="#sectors">Who We Serve</a><a href="#packages">Packages</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="btn" href="#contact">Get in touch</a>
+    <button class="menu" id="menu" aria-label="Toggle navigation">☰</button>
+  </div>
+</header>
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">🌿 Responsible backup solutions</span>
+        <h1>Cleaner Backup.<br>Healthier Tomorrow.</h1>
+        <p>Smarter generator management for organisations that want dependable backup power and a more responsible approach to the environment.</p>
+        <div class="hero-actions"><a class="btn" href="#services">Explore our solutions →</a><a class="btn btn-outline" href="#about">Discover GenClean</a></div>
+      </div>
+      <div class="visual">
+        <div class="visual-card">
+          <small>Power with responsibility</small>
+          <h3>Better care for the backup systems businesses rely on.</h3>
+          <p>Practical support, clear reporting and a path towards cleaner backup-energy choices.</p>
+          <div class="stat-row"><div class="stat"><strong>Inspect</strong><span>Understand systems</span></div><div class="stat"><strong>Maintain</strong><span>Plan ahead</span></div><div class="stat"><strong>Improve</strong><span>Explore options</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div><span class="kicker">About GenClean</span><h2>Reliable backup power, managed more responsibly.</h2><p>GenClean is a proposed Delhi NCR-based B2B environmental-tech venture. It aims to help organisations understand, maintain and manage their diesel generator systems while exploring cleaner backup-energy alternatives.</p><p>Our approach brings together practical maintenance coordination, documentation and sustainability-focused guidance.</p></div>
+      <div class="about-panel"><h3>Our purpose</h3><p>Make responsible generator management easier to understand and act on.</p><div class="check"><b>✓</b><span><strong>Mission:</strong> Support organisations with organised generator care and informed energy decisions.</span></div><div class="check"><b>✓</b><span><strong>Vision:</strong> Encourage cleaner, more efficient and more responsible backup-power practices.</span></div></div>
+    </div>
+  </section>
+  <section id="services">
+    <div class="container">
+      <div class="section-head"><span class="kicker">What we do</span><h2>Practical services for better generator management.</h2><p>GenClean's proposed service model focuses on helping organisations keep track of their backup systems and make informed decisions.</p></div>
+      <div class="cards">
+        <article class="card"><div class="icon">🔍</div><h3>Generator Inspections</h3><p>Organised visual and operational checklists to help clients understand equipment condition and identify issues for qualified technicians.</p></article>
+        <article class="card"><div class="icon">🛠️</div><h3>Preventive Maintenance</h3><p>Maintenance schedules, service reminders and coordination with qualified generator service professionals.</p></article>
+        <article class="card"><div class="icon">📋</div><h3>Digital Reports</h3><p>Clear service records and inspection summaries that help facility teams track work and plan follow-ups.</p></article>
+        <article class="card"><div class="icon">🌫️</div><h3>Emission Monitoring Coordination</h3><p>Support with documentation and coordination for applicable emissions testing through authorised or qualified providers.</p></article>
+        <article class="card"><div class="icon">🌱</div><h3>Cleaner-Energy Consultancy</h3><p>Initial guidance to help organisations explore suitable alternatives and complementary backup-energy options.</p></article>
+        <article class="card"><div class="icon">📅</div><h3>Service Planning</h3><p>Structured maintenance calendars and follow-up planning to reduce missed checks and improve visibility.</p></article>
+      </div>
+    </div>
+  </section>
+  <section id="sectors" class="about">
+    <div class="container">
+      <div class="section-head"><span class="kicker">Who we serve</span><h2>Supporting places that depend on reliable power.</h2><p>Our proposed customer segments include organisations and facilities that use backup generators.</p></div>
+      <div class="audience"><div class="audience-item">🏢 Residential societies & RWAs</div><div class="audience-item">🏥 Hospitals & clinics</div><div class="audience-item">🎓 Schools & colleges</div><div class="audience-item">🏬 Commercial buildings</div><div class="audience-item">🏭 Small & medium businesses</div><div class="audience-item">🏨 Hotels & hospitality</div></div>
+    </div>
+  </section>
+  <section class="packages" id="packages">
+    <div class="container">
+      <div class="section-head"><span class="kicker">Proposed packages</span><h2>Flexible support, based on your facility's needs.</h2><p>Illustrative packages for the college project. Final scope and pricing would depend on site requirements and service-provider costs.</p></div>
+      <div class="cards">
+        <article class="card"><div class="kicker">Essential</div><h3>Basic Care</h3><div class="price">₹2,499 <small>/ illustrative month</small></div><ul class="package-feature"><li>✔ Basic inspection checklist</li><li>✔ Maintenance calendar</li><li>✔ Digital visit summary</li></ul><a class="btn btn-outline" href="#contact">Enquire now</a></article>
+        <article class="card" style="border:2px solid #8ab99a"><div class="kicker">Enhanced</div><h3>Smart Care</h3><div class="price">₹4,999 <small>/ illustrative month</small></div><ul class="package-feature"><li>✔ Essential package features</li><li>✔ Scheduled follow-up coordination</li><li>✔ Monthly performance summary</li></ul><a class="btn" href="#contact">Enquire now</a></article>
+        <article class="card"><div class="kicker">Advanced</div><h3>Green Guidance</h3><div class="price">₹7,999 <small>/ illustrative month</small></div><ul class="package-feature"><li>✔ Smart package features</li><li>✔ Emissions-testing coordination</li><li>✔ Cleaner-energy options review</li></ul><a class="btn btn-outline" href="#contact">Enquire now</a></article>
+      </div>
+      <p class="price-note">*Prices are hypothetical examples created for an academic project, not live commercial quotations. Taxes, parts, repairs and third-party testing are not included.</p>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="container">
+      <div class="section-head"><span class="kicker">Let's connect</span><h2>Start a conversation with GenClean.</h2><p>Tell us a little about your organisation and the kind of backup-power support you are exploring.</p></div>
+      <div class="contact-grid">
+        <div class="contact-box"><h3>Interested in cleaner backup solutions?</h3><p>Use the enquiry form to prepare a message for the GenClean team.</p><p>📍 Proposed service area: Delhi NCR, India</p><p>✉️ <a href="mailto:hello@genclean.example">hello@genclean.example</a></p><p class="fine">This is a student project concept. Contact details are illustrative and should be replaced before real-world use.</p></div>
+        <form id="contactForm">
+          <div class="field"><label for="name">Your name</label><input id="name" name="name" required placeholder="Enter your name"></div>
+          <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" required placeholder="you@example.com"></div>
+          <div class="field"><label for="organisation">Organisation</label><input id="organisation" name="organisation" placeholder="Company, society or institution"></div>
+          <div class="field"><label for="message">How can we help?</label><textarea id="message" name="message" required placeholder="Tell us what you're looking for..."></textarea></div>
+          <button class="btn" type="submit">Prepare enquiry email →</button>
+          <p class="fine" id="formStatus">This demo form opens your email app; it does not store or transmit submissions.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="container footer-row"><div><div class="footer-brand">✦ GenClean</div><div class="fine">Cleaner Backup. Healthier Tomorrow.</div></div><div class="fine">A proposed student startup concept · Delhi NCR, India</div><div class="fine">© <span id="year"></span> GenClean</div></div></footer>
+<script>
+  const nav=document.getElementById('nav');
+  document.getElementById('menu').addEventListener('click',()=>nav.classList.toggle('open'));
+  document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+  document.getElementById('year').textContent=new Date().getFullYear();
+  document.getElementById('contactForm').addEventListener('submit',e=>{
+    e.preventDefault();
+    const f=new FormData(e.target);
+    const subject=encodeURIComponent('GenClean website enquiry');
+    const body=encodeURIComponent(`Name: ${f.get('name')}\nEmail: ${f.get('email')}\nOrganisation: ${f.get('organisation')}\n\nMessage:\n${f.get('message')}`);
+    document.getElementById('formStatus').textContent='Your email app should open with the enquiry prepared. This demo does not send it automatically.';
+    window.location.href=`mailto:hello@genclean.example?subject=${subject}&body=${body}`;
+  });
+</script>
+</body>
+</html>
